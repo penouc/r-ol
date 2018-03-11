@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import { Button } from "antd";
 import { LayerBox } from "./layerBox";
 import { layerConfig } from "./layerConfig";
+import { getSomeData } from "../../redux/renderSomeVectors";
+import store from "../../redux/createStore";
 
 const LayerManagerStyle = {
   height: "48px",
@@ -9,6 +12,12 @@ const LayerManagerStyle = {
   position: "fixed",
   left: "104px",
   top: "20px"
+};
+
+const clickGetSomeData = () => {
+  let action = getSomeData();
+  console.log("action ", action);
+  store.dispatch(action);
 };
 
 class LayerManagerApp extends Component {
@@ -32,6 +41,7 @@ class LayerManagerApp extends Component {
     return (
       <div style={LayerManagerStyle} className="boxex-wrap">
         {this.layersConfItems}
+        <Button onClick={clickGetSomeData}>试试</Button>
       </div>
     );
   }

@@ -4,19 +4,21 @@ import { addLayer, addInteraction } from "../mapBase/layerTool";
 import { amapLayer } from "../layers/layerAmap";
 import { highwayLayer } from "../layers/layerHighway";
 import { vectorHighwayLayer } from "../layers/layerVectorHighway";
-import { clickInteration as singleclick } from "../interactions/singleclick";
+import { demoVectorLayer } from "../layers/layerDemoVector";
 import { LayerManagerApp } from "../components/layerManagerApp";
 
 function loadLayers() {
   addLayer(amapLayer);
+  addLayer(demoVectorLayer);
+  console.log(demoVectorLayer.getSource());
   // addLayer(arriveLayer);
   // addLayer(moheLayer);
-  addLayer(highwayLayer);
-  addLayer(vectorHighwayLayer);
+  // addLayer(highwayLayer);
+  // addLayer(vectorHighwayLayer);
 }
 
 function loadInteractions() {
-  addInteraction(singleclick);
+  // addInteraction(singleclick);
 }
 
 export class Home extends Component {
