@@ -6,6 +6,7 @@ import { highwayLayer } from "../layers/layerHighway";
 import { vectorHighwayLayer } from "../layers/layerVectorHighway";
 import { demoVectorLayer } from "../layers/layerDemoVector";
 import { LayerManagerApp } from "../components/layerManagerApp";
+import { click } from "../interactions/click";
 
 function loadLayers() {
   addLayer(amapLayer);
@@ -18,7 +19,7 @@ function loadLayers() {
 }
 
 function loadInteractions() {
-  // addInteraction(singleclick);
+  addInteraction(click);
 }
 
 export class Home extends Component {

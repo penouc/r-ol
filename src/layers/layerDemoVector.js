@@ -1,5 +1,4 @@
 import VectorLayer from "ol/layer/vector";
-import VectorSource from "ol/source/vector";
 import store from "../redux/createStore";
 
 let demoVectorLayer = new VectorLayer({
@@ -11,5 +10,9 @@ demoVectorLayer.refresh = () => {
   console.log("demoVectorLayer", demoVectorLayer);
   demoVectorLayer.setSource(store.getState()["demoSource"]);
 };
+
+store.subscribe(() => {
+  demoVectorLayer.refresh();
+});
 
 export { demoVectorLayer };
